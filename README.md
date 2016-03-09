@@ -1,5 +1,5 @@
 # Material CV - Android
-A simple app to store and display my CV, implemented using MVP architecture.
+An app to store and display my CV, implemented using [model-view-presenter](https://en.wikipedia.org/wiki/Model-view-presenter) pattern and clean architecture.
 
 ## Libraries
  
@@ -10,38 +10,18 @@ Libraries used:
 - [RxAndroid](https://github.com/ReactiveX/RxAndroid) (RxJava Android bindings)
 - [Butterknife](https://github.com/JakeWharton/butterknife) (field and method binding)
 - [Icepick](https://github.com/frankiesardo/icepick) (saving/restoring instance state)
-- [Retrofit](http://square.github.io/retrofit) (API consumption)
+- [Retrofit](https://github.com/square/retrofit) (API consumption)
 - [OkHttp](https://github.com/square/okhttp) (HTTP client)
 - [Dagger 2](http://google.github.io/dagger) (dependency injection)
 - [Robolectric](https://github.com/robolectric/robolectric) (unit testing)
-- [Mockito](http://mockito.org/) (unit test mocking)
+- [Mockito](https://github.com/mockito/mockito) (unit test mocking)
 - [Espresso](https://google.github.io/android-testing-support-library/docs/espresso/index.html) (UI testing)
 - [Glide](https://github.com/bumptech/glide) (image loading)
+- [Timber](https://github.com/JakeWharton/timber) (Logging)
 
 ## Usage
 
 ### Folder Structure
-
-The folder structure used in this app is based on the [Ribot app](https://github.com/ribot/ribot-app-android) structure.
-The app has the following structure:
-
-- **data** - represents the entire data layer.
-Includes the following packages (and single files e.g. to handle bus events):
-  -  **entities** - all domain-specific java objects. E.g. objects serialized via Retrofit.
-  -  **local** - helper classes for interacting with local storage. E.g. DatabaseService, PreferencesService.
-  -  **server** - helper classes for interacting with remote API's. E.g. Retrofit, Parse.
-  -  **repositories** - domain-specific data managers containing RxJava operators
-  to interact with classes in 'local' and 'server'. Example method: getUserByName().
-  Each method is typically structured as an interface and implementation.
-- **injection** - dependency injection using [Dagger](http://google.github.io/dagger)
-modules/components.
-- **service** - a class for each of the background services, e.g. beacons, notifications.
-- **ui** - the presentation layer. Each folder represents an MVP candidate -
-a screen in the app represented by a fragment/activity (the view), a view interface and a presenter.
-  -  **base** - a set of base classes from which MVP candidates can inherit.
-  -  **main** - a main activity (incorporating TabLayout).
-  -  **mvpcandidate1** - E.g. sign in screen.
-- **util** - any util classes, e.g. for handling dates, strings, dialogs.
 
 ## Licence
 
