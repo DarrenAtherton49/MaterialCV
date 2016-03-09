@@ -1,4 +1,4 @@
-package com.atherton.darren.ui.base;
+package com.atherton.darren.presentation.view.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +9,7 @@ import butterknife.ButterKnife;
  * Base activity for the project from which all other activities in the
  * project should extend.
  */
-public class BaseMvpActivity extends AppCompatActivity {
+public class BaseActivity extends AppCompatActivity {
 
     // todo inject activity component - look at base activity in example
 
