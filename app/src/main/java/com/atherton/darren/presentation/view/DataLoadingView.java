@@ -7,7 +7,7 @@ import android.content.Context;
  * For each View in the app (i.e. an Activity or Fragment), you should extend this
  * interface via an interface specific to that View.
  */
-public interface BaseDataLoadingView {
+public interface DataLoadingView {
 
     /**
      * Show an error message in the event that loading fails

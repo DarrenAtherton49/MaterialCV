@@ -9,16 +9,14 @@ import butterknife.ButterKnife;
  * Base activity for the project from which all other activities in the
  * project should extend.
  */
-public class BaseActivity extends AppCompatActivity {
-
-    // todo inject activity component - look at base activity in example
+public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        ButterKnife.bind(this);
+    protected void onCreate(Bundle savedInstanceState) {
         // The activity is being created.
-        // todo implement timber log for each lifecycle method, only if in debug mode
+        super.onCreate(savedInstanceState);
+        setContentView(getContentView());
+        ButterKnife.bind(this);
     }
 
     @Override
@@ -50,6 +48,11 @@ public class BaseActivity extends AppCompatActivity {
         super.onDestroy();
         // The activity is about to be destroyed.
     }
+
+    /**
+     * Ensures we provide a content view identifier for setContentView()
+     */
+    protected abstract int getContentView();
 
     // todo inject activity component - look at base activity in example
 }
