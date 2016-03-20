@@ -10,7 +10,8 @@ public interface ProjectListView extends ProfileListView {
     /**
      * Render user's project data in the UI.
      *
-     * @param userProject The {@link UserProject} that will be shown.
+     * @param userProject
+     *      The {@link UserProject} that will be shown.
      */
     void renderProjectList(UserProject userProject);
 }

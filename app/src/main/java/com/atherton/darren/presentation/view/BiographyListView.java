@@ -10,7 +10,8 @@ public interface BiographyListView extends ProfileListView {
     /**
      * Render user's biography data in the UI.
      *
-     * @param userBio The {@link UserBio} that will be shown.
+     * @param userBio
+     *      The {@link UserBio} that will be shown.
      */
     void renderBiographyList(UserBio userBio);
 }

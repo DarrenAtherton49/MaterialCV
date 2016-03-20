@@ -11,7 +11,8 @@ public interface ExperienceListView extends ProfileListView {
     /**
      * Render user's work experience data in the UI.
      *
-     * @param userExperience The {@link UserExperience} that will be shown.
+     * @param userExperience
+     *      The {@link UserExperience} that will be shown.
      */
     void renderExperienceList(UserExperience userExperience);
 }

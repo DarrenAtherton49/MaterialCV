@@ -12,7 +12,8 @@ public interface DataLoadingView {
     /**
      * Show an error message in the event that loading fails
      *
-     * @param message A string representing an error.
+     * @param message
+     *      A string representing an error.
      */
     void showError(String message);
 

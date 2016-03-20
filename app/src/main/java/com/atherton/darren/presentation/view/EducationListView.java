@@ -10,7 +10,8 @@ public interface EducationListView extends ProfileListView {
     /**
      * Render user's education data in the UI.
      *
-     * @param userEducation The {@link UserEducation} that will be shown.
+     * @param userEducation
+     *      The {@link UserEducation} that will be shown.
      */
     void renderEducationList(UserEducation userEducation);
 }
