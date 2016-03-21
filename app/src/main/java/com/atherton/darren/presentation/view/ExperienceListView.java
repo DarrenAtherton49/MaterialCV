@@ -1,6 +1,6 @@
 package com.atherton.darren.presentation.view;
 
-import com.atherton.darren.data.entity.UserExperience;
+import com.atherton.darren.data.entity.Experience;
 
 /**
  * Interface representing a View to show a user's commercial
@@ -12,7 +12,7 @@ public interface ExperienceListView extends ProfileListView {
      * Render user's work experience data in the UI.
      *
      * @param userExperience
-     *      The {@link UserExperience} that will be shown.
+     *      The {@link Experience} that will be shown.
      */
-    void renderExperienceList(UserExperience userExperience);
+    void renderExperienceList(Experience userExperience);
 }
