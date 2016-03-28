@@ -3,7 +3,7 @@ package com.atherton.darren.presentation.view;
 /**
  * Interface representing a View to show an aspect of a user profile.
  */
-public interface ProfileListView {
+public interface ProfileListView extends DataLoadingView {
 
     /**
      * Show a button to contact the user in the UI

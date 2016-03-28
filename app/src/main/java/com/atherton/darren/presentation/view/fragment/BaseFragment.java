@@ -14,6 +14,4 @@ public abstract class BaseFragment extends Fragment {
 
     @Inject
     AppNavigator appNavigator;
-
-
 }

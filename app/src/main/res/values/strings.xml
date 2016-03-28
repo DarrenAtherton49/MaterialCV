@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Material CV</string>
+    
+    <string name="main_tab_biography_title">Biography</string>
+    <string name="main_tab_education_title">Education</string>
+    <string name="main_tab_projects_title">Projects</string>
+    <string name="main_tab_experience_title">Experience</string>
 </resources>
