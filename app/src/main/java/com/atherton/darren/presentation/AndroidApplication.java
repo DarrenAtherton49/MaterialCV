@@ -10,7 +10,7 @@ import timber.log.Timber;
 
 public class AndroidApplication extends Application {
 
-    private AppComponent mAppComponent;
+    private AppComponent appComponent;
 
     @Override
     public void onCreate() {
@@ -20,7 +20,7 @@ public class AndroidApplication extends Application {
     }
 
     private void initInjection() {
-        mAppComponent = DaggerAppComponent.builder()
+        appComponent = DaggerAppComponent.builder()
                 .appModule(new AppModule(this))
                 .build();
     }
@@ -30,6 +30,6 @@ public class AndroidApplication extends Application {
     }
 
     public AppComponent getAppComponent() {
-        return mAppComponent;
+        return appComponent;
     }
 }

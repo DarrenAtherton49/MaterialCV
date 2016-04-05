@@ -1,7 +1,5 @@
 package com.atherton.darren.presentation.injection.module;
 
-import android.content.Context;
-
 import com.atherton.darren.presentation.AndroidApplication;
 
 import javax.inject.Singleton;
@@ -15,15 +13,13 @@ import dagger.Provides;
 @Module
 public class AppModule {
 
-    private final AndroidApplication mApplication;
+    private final AndroidApplication application;
 
     public AppModule(AndroidApplication application) {
-        mApplication = application;
+        this.application = application;
     }
 
-    @Provides
-    @Singleton
-    Context provideApplicationContext() {
-        return mApplication;
+    @Provides @Singleton AndroidApplication provideApplication() {
+        return application;
     }
 }
