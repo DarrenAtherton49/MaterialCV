@@ -18,11 +18,9 @@ import timber.log.Timber;
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
-    @Inject
-    AppNavigator appNavigator;
+    @Inject AppNavigator appNavigator;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    @Override protected void onCreate(Bundle savedInstanceState) {
         // The activity is being created.
         super.onCreate(savedInstanceState);
         setContentView(getContentView());
@@ -35,36 +33,31 @@ public abstract class BaseActivity extends AppCompatActivity {
         getAppComponent().inject(this);
     }
 
-    @Override
-    protected void onStart() {
+    @Override protected void onStart() {
         // The activity is about to become visible.
         super.onStart();
         Timber.d("onStart()");
     }
 
-    @Override
-    protected void onResume() {
+    @Override protected void onResume() {
         // The activity has become visible (it is now "resumed").
         super.onResume();
         Timber.d("onResume()");
     }
 
-    @Override
-    protected void onPause() {
+    @Override protected void onPause() {
         // Another activity is taking focus (this activity is about to be "paused").
         super.onPause();
         Timber.d("onPause()");
     }
 
-    @Override
-    protected void onStop() {
+    @Override protected void onStop() {
         // The activity is no longer visible (it is now "stopped")
         super.onStop();
         Timber.d("onStop()");
     }
 
-    @Override
-    protected void onDestroy() {
+    @Override protected void onDestroy() {
         // The activity is about to be destroyed.
         super.onDestroy();
         Timber.d("onDestroy()");

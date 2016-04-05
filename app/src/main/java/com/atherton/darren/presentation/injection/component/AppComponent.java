@@ -15,5 +15,5 @@ import dagger.Component;
 public interface AppComponent {
   void inject(BaseActivity baseActivity);
 
-  AndroidApplication application();
+  AndroidApplication getApplication();
 }

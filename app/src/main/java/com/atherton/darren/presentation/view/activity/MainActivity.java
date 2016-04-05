@@ -8,9 +8,14 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v7.widget.Toolbar;
 
 import com.atherton.darren.R;
+import com.atherton.darren.presentation.injection.component.AdapterComponent;
+import com.atherton.darren.presentation.injection.component.DaggerAdapterComponent;
+import com.atherton.darren.presentation.injection.module.AdapterModule;
 import com.atherton.darren.presentation.view.MainTabbedView;
 import com.atherton.darren.presentation.view.adapter.MainViewPagerAdapter;
 import com.atherton.darren.presentation.view.fragment.BiographyListFragment;
+
+import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.BindDrawable;
@@ -27,10 +32,13 @@ public class MainActivity extends BaseActivity implements MainTabbedView {
     public static final int PROJECT_LIST_TAB = 2;
     public static final int EXPERIENCE_LIST_TAB = 3;
 
+    private AdapterComponent adapterComponent;
+
+    @Inject MainViewPagerAdapter viewPagerAdapter;
+
     @Bind(R.id.toolbar_main) Toolbar toolbar;
     @Bind(R.id.tablayout_main) TabLayout tabLayout;
     @Bind(R.id.viewpager_main) ViewPager viewPager;
-    MainViewPagerAdapter viewPagerAdapter;
 
     @BindString(R.string.main_tab_biography_title) String biographyTitle;
     @BindString(R.string.main_tab_education_title) String educationTitle;
@@ -45,6 +53,9 @@ public class MainActivity extends BaseActivity implements MainTabbedView {
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setSupportActionBar(toolbar);
+
+        initializeInjector();
+        adapterComponent.inject(this);
 
         if (viewPager != null) {
             initViewPager(viewPager);
@@ -71,8 +82,14 @@ public class MainActivity extends BaseActivity implements MainTabbedView {
         };
     }
 
+    private void initializeInjector() {
+        adapterComponent = DaggerAdapterComponent.builder()
+                .appComponent(getAppComponent())
+                .adapterModule(new AdapterModule(this))
+                .build();
+    }
+
     private void initViewPager(ViewPager viewPager) {
-        viewPagerAdapter = new MainViewPagerAdapter(getSupportFragmentManager());
         viewPagerAdapter.addFragment(new BiographyListFragment(), biographyTitle);
         viewPagerAdapter.addFragment(new BiographyListFragment(), educationTitle);
         viewPagerAdapter.addFragment(new BiographyListFragment(), projectTitle);

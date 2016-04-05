@@ -1,6 +1,10 @@
 package com.atherton.darren.presentation.injection.module;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+
 import com.atherton.darren.presentation.AndroidApplication;
+import com.atherton.darren.presentation.navigation.AppNavigator;
 
 import javax.inject.Singleton;
 
@@ -21,5 +25,13 @@ public class AppModule {
 
     @Provides @Singleton AndroidApplication provideApplication() {
         return application;
+    }
+
+    @Provides @Singleton SharedPreferences provideSharedPrefs() {
+        return PreferenceManager.getDefaultSharedPreferences(application);
+    }
+
+    @Provides @Singleton AppNavigator provideNavigator() {
+        return new AppNavigator();
     }
 }

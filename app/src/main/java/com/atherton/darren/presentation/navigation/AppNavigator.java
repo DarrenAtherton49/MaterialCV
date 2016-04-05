@@ -3,13 +3,11 @@ package com.atherton.darren.presentation.navigation;
 import android.content.Context;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
 /**
  * Class used to navigate through the application via either activity/intents
  * or fragment transactions
  */
-@Singleton
 public class AppNavigator {
 
     /**
