@@ -14,6 +14,7 @@ import com.atherton.darren.presentation.injection.module.AdapterModule;
 import com.atherton.darren.presentation.view.MainTabbedView;
 import com.atherton.darren.presentation.view.adapter.MainViewPagerAdapter;
 import com.atherton.darren.presentation.view.fragment.BiographyListFragment;
+import com.atherton.darren.presentation.view.fragment.ExperienceListFragment;
 
 import javax.inject.Inject;
 
@@ -52,14 +53,14 @@ public class MainActivity extends BaseActivity implements MainTabbedView {
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setSupportActionBar(toolbar);
+        setSupportActionBar(this.toolbar);
 
-        initializeInjector();
-        adapterComponent.inject(this);
+        initInjection();
+        this.adapterComponent.inject(this);
 
-        if (viewPager != null) {
-            initViewPager(viewPager);
-            initTabLayout(viewPager);
+        if (this.viewPager != null) {
+            initViewPager(this.viewPager);
+            initTabLayout(this.viewPager);
             setTitleForPosition(BIOGRAPHY_LIST_TAB); //todo change this to get last used fragment index instead of always 0
         }
     }
@@ -82,25 +83,25 @@ public class MainActivity extends BaseActivity implements MainTabbedView {
         };
     }
 
-    private void initializeInjector() {
-        adapterComponent = DaggerAdapterComponent.builder()
+    private void initInjection() {
+        this.adapterComponent = DaggerAdapterComponent.builder()
                 .appComponent(getAppComponent())
                 .adapterModule(new AdapterModule(this))
                 .build();
     }
 
     private void initViewPager(ViewPager viewPager) {
-        viewPagerAdapter.addFragment(new BiographyListFragment(), biographyTitle);
-        viewPagerAdapter.addFragment(new BiographyListFragment(), educationTitle);
-        viewPagerAdapter.addFragment(new BiographyListFragment(), projectTitle);
-        viewPagerAdapter.addFragment(new BiographyListFragment(), experienceTitle);
-        viewPager.setAdapter(viewPagerAdapter);
+        this.viewPagerAdapter.addFragment(new BiographyListFragment(), biographyTitle);
+        this.viewPagerAdapter.addFragment(new BiographyListFragment(), educationTitle);
+        this.viewPagerAdapter.addFragment(new BiographyListFragment(), projectTitle);
+        this.viewPagerAdapter.addFragment(new ExperienceListFragment(), experienceTitle);
+        viewPager.setAdapter(this.viewPagerAdapter);
         viewPager.addOnPageChangeListener(onPageChanged());
     }
 
     private void initTabLayout(ViewPager viewPager) {
-        if (tabLayout != null) {
-            tabLayout.setupWithViewPager(viewPager);
+        if (this.tabLayout != null) {
+            this.tabLayout.setupWithViewPager(viewPager);
             setTabIcon(BIOGRAPHY_LIST_TAB, biographyIcon);
             setTabIcon(EDUCATION_LIST_TAB, educationIcon);
             setTabIcon(PROJECT_LIST_TAB, projectIcon);
@@ -116,8 +117,8 @@ public class MainActivity extends BaseActivity implements MainTabbedView {
     }
 
     private void setTitleForPosition(int position) {
-        if (viewPagerAdapter != null) {
-            CharSequence title = viewPagerAdapter.getTitleForPosition(position);
+        if (this.viewPagerAdapter != null) {
+            CharSequence title = this.viewPagerAdapter.getTitleForPosition(position);
             if (title != null) {
                 setTitle(title);
             }

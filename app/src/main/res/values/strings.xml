@@ -5,4 +5,6 @@
     <string name="main_tab_education_title">Education</string>
     <string name="main_tab_projects_title">Projects</string>
     <string name="main_tab_experience_title">Experience</string>
+
+    <string name="item_experience_organisation_link_button">View Organization</string>
 </resources>

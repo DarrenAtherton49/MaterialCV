@@ -24,11 +24,11 @@ public class AppModule {
     }
 
     @Provides @Singleton AndroidApplication provideApplication() {
-        return application;
+        return this.application;
     }
 
     @Provides @Singleton SharedPreferences provideSharedPrefs() {
-        return PreferenceManager.getDefaultSharedPreferences(application);
+        return PreferenceManager.getDefaultSharedPreferences(this.application);
     }
 
     @Provides @Singleton AppNavigator provideNavigator() {

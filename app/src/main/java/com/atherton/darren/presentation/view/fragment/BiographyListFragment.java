@@ -2,7 +2,6 @@ package com.atherton.darren.presentation.view.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +10,9 @@ import com.atherton.darren.R;
 import com.atherton.darren.data.entity.Bio;
 import com.atherton.darren.presentation.view.BiographyListView;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class BiographyListFragment extends BaseFragment implements BiographyListView {
-
-    @Bind(R.id.recyclerview_all) RecyclerView recyclerView;
 
     public BiographyListFragment() {
         setRetainInstance(true);
@@ -32,9 +28,6 @@ public class BiographyListFragment extends BaseFragment implements BiographyList
         ButterKnife.bind(this, view);
         return view;
     }
-
-
-
 
     @Override public void renderBiographyList(Bio userBio) {
 

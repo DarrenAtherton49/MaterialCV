@@ -21,6 +21,6 @@ public class AdapterModule {
     }
 
     @Provides @PerActivity MainViewPagerAdapter provideMainViewPagerAdapter() {
-        return new MainViewPagerAdapter(activity.getSupportFragmentManager());
+        return new MainViewPagerAdapter(this.activity.getSupportFragmentManager());
     }
 }
