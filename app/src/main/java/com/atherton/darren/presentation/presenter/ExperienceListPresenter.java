@@ -3,10 +3,10 @@ package com.atherton.darren.presentation.presenter;
 import android.support.annotation.NonNull;
 
 import com.atherton.darren.data.entity.Experience;
-import com.atherton.darren.presentation.injection.scope.PerActivity;
+import com.atherton.darren.presentation.injection.scope.PerScreen;
 import com.atherton.darren.presentation.view.ExperienceListView;
 
-@PerActivity
+@PerScreen
 public class ExperienceListPresenter implements Presenter {
 
     private ExperienceListView experienceListView;

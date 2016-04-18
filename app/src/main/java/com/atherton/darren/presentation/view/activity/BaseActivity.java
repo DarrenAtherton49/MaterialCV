@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.atherton.darren.presentation.AndroidApplication;
 import com.atherton.darren.presentation.injection.component.AppComponent;
+import com.atherton.darren.presentation.injection.module.ActivityModule;
 import com.atherton.darren.presentation.navigation.AppNavigator;
 
 import javax.inject.Inject;
@@ -75,5 +76,9 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     protected AppComponent getAppComponent() {
         return ((AndroidApplication)getApplication()).getAppComponent();
+    }
+
+    protected ActivityModule getActivityModule() {
+        return new ActivityModule(this);
     }
 }

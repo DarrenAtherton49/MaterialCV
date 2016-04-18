@@ -8,9 +8,9 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v7.widget.Toolbar;
 
 import com.atherton.darren.R;
-import com.atherton.darren.presentation.injection.component.AdapterComponent;
-import com.atherton.darren.presentation.injection.component.DaggerAdapterComponent;
-import com.atherton.darren.presentation.injection.module.AdapterModule;
+import com.atherton.darren.presentation.injection.component.DaggerMainActivityComponent;
+import com.atherton.darren.presentation.injection.component.MainActivityComponent;
+import com.atherton.darren.presentation.injection.module.MainActivityModule;
 import com.atherton.darren.presentation.view.MainTabbedView;
 import com.atherton.darren.presentation.view.adapter.MainViewPagerAdapter;
 import com.atherton.darren.presentation.view.fragment.BiographyListFragment;
@@ -33,7 +33,7 @@ public class MainActivity extends BaseActivity implements MainTabbedView {
     public static final int PROJECT_LIST_TAB = 2;
     public static final int EXPERIENCE_LIST_TAB = 3;
 
-    private AdapterComponent adapterComponent;
+    private MainActivityComponent mainActivityComponent;
 
     @Inject MainViewPagerAdapter viewPagerAdapter;
 
@@ -56,7 +56,7 @@ public class MainActivity extends BaseActivity implements MainTabbedView {
         setSupportActionBar(this.toolbar);
 
         initInjection();
-        this.adapterComponent.inject(this);
+        this.mainActivityComponent.inject(this);
 
         if (this.viewPager != null) {
             initViewPager(this.viewPager);
@@ -84,9 +84,10 @@ public class MainActivity extends BaseActivity implements MainTabbedView {
     }
 
     private void initInjection() {
-        this.adapterComponent = DaggerAdapterComponent.builder()
+        this.mainActivityComponent = DaggerMainActivityComponent.builder()
                 .appComponent(getAppComponent())
-                .adapterModule(new AdapterModule(this))
+                .activityModule(getActivityModule())
+                .mainActivityModule(new MainActivityModule(this))
                 .build();
     }
 

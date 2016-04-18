@@ -2,25 +2,22 @@ package com.atherton.darren.presentation.injection.module;
 
 import android.support.v7.app.AppCompatActivity;
 
-import com.atherton.darren.presentation.injection.scope.PerActivity;
+import com.atherton.darren.presentation.injection.scope.PerScreen;
 import com.atherton.darren.presentation.view.adapter.MainViewPagerAdapter;
 
 import dagger.Module;
 import dagger.Provides;
 
-/**
- * Dagger module that provides adapters
- */
 @Module
-public class AdapterModule {
+public class MainActivityModule {
 
     private final AppCompatActivity activity;
 
-    public AdapterModule(AppCompatActivity activity) {
+    public MainActivityModule(AppCompatActivity activity) {
         this.activity = activity;
     }
 
-    @Provides @PerActivity MainViewPagerAdapter provideMainViewPagerAdapter() {
+    @Provides @PerScreen MainViewPagerAdapter provideMainViewPagerAdapter() {
         return new MainViewPagerAdapter(this.activity.getSupportFragmentManager());
     }
 }

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.atherton.darren.R;
 import com.atherton.darren.data.entity.Experience;
+import com.atherton.darren.presentation.injection.component.DaggerExperienceComponent;
 import com.atherton.darren.presentation.injection.component.ExperienceComponent;
 import com.atherton.darren.presentation.presenter.ExperienceListPresenter;
 import com.atherton.darren.presentation.view.ExperienceListView;
@@ -31,12 +32,12 @@ public class ExperienceListFragment extends BaseFragment implements ExperienceLi
         void onExperienceItemClicked(final Experience experienceItem);
     }
 
-    @Inject ExperienceListPresenter experienceListPresenter;
+    private ExperienceComponent experienceComponent;
+
+    ExperienceListPresenter experienceListPresenter;
     @Inject ExperienceListAdapter experienceListAdapter;
 
     @Bind(R.id.recyclerview_all) RecyclerView recyclerView;
-
-    private ExperienceComponent experienceComponent;
 
     private ExperienceListListener experienceListListener;
 
@@ -53,8 +54,7 @@ public class ExperienceListFragment extends BaseFragment implements ExperienceLi
 
     @Override public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // todo inject component here
-        initializeInjector();
+        initInjection();
         this.experienceComponent.inject(this);
     }
 
@@ -167,9 +167,10 @@ public class ExperienceListFragment extends BaseFragment implements ExperienceLi
                 }
             };
 
-    private void initializeInjector() {
-//        this.experienceComponent = DaggerExperienceComponent.builder()
-//                .
-//                .build();
+    private void initInjection() {
+        this.experienceComponent = DaggerExperienceComponent.builder()
+                .appComponent(getAppComponent())
+                .activityModule(getActivityModule())
+                .build();
     }
 }
