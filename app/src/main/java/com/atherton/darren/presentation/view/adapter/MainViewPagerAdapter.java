@@ -32,7 +32,8 @@ public class MainViewPagerAdapter extends FragmentPagerAdapter {
         fragmentTitleList.add(fragmentTitle);
     }
 
-    public CharSequence getTitleForPosition(int position) {
+    @Override
+    public CharSequence getPageTitle(int position) {
         return fragmentTitleList.get(position);
     }
 }

@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Material CV</string>
-    
+
+    <string name="toolbar_title">Darren Atherton</string>
+
     <string name="main_tab_biography_title">Biography</string>
     <string name="main_tab_education_title">Education</string>
     <string name="main_tab_projects_title">Projects</string>

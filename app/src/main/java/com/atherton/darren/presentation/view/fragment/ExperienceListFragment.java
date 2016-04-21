@@ -34,7 +34,7 @@ public class ExperienceListFragment extends BaseFragment implements ExperienceLi
 
     private ExperienceComponent experienceComponent;
 
-    ExperienceListPresenter experienceListPresenter;
+    @Inject ExperienceListPresenter experienceListPresenter;
     @Inject ExperienceListAdapter experienceListAdapter;
 
     @Bind(R.id.recyclerview_all) RecyclerView recyclerView;

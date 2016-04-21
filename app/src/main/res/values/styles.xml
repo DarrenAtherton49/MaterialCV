@@ -12,8 +12,8 @@
     </style>
 
     <style name="MainTabLayout" parent="Widget.Design.TabLayout">
-        <item name="tabIndicatorColor">#ffffff</item>
-        <item name="tabMode">fixed</item>
+        <item name="tabIndicatorColor">@color/white</item>
+        <item name="tabMode">scrollable</item>
         <item name="tabGravity">fill</item>
     </style>
 

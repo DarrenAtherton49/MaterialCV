@@ -11,5 +11,5 @@ import dagger.Component;
 @Component(dependencies = AppComponent.class, modules = {ActivityModule.class, ExperienceModule.class})
 public interface ExperienceComponent extends ActivityComponent {
     void inject(ExperienceListFragment experienceListFragment);
-    // void inject(ExperienceDetailActivity experienceDetailActivity);
+    // void inject(ExperienceDetailActivity experienceDetailActivity); //todo uncomment
 }

@@ -4,7 +4,13 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import com.atherton.darren.data.executor.JobExecutor;
+import com.atherton.darren.data.repository.ExperienceDataRepository;
+import com.atherton.darren.domain.executor.PostExecutionThread;
+import com.atherton.darren.domain.executor.ThreadExecutor;
+import com.atherton.darren.domain.repository.ExperienceRepository;
 import com.atherton.darren.presentation.AndroidApplication;
+import com.atherton.darren.presentation.UIThread;
 import com.atherton.darren.presentation.navigation.AppNavigator;
 
 import javax.inject.Singleton;
@@ -39,4 +45,18 @@ public class AppModule {
     @Provides @Singleton AppNavigator provideNavigator() {
         return new AppNavigator();
     }
+
+    @Provides @Singleton ThreadExecutor provideThreadExecutor(JobExecutor jobExecutor) {
+        return jobExecutor;
+    }
+
+    @Provides @Singleton PostExecutionThread providePostExecutionThread(UIThread uiThread) {
+        return uiThread;
+    }
+
+    @Provides @Singleton ExperienceRepository provideExperienceRepository(ExperienceDataRepository experienceDataRepository) {
+        return experienceDataRepository;
+    }
+
+    //todo provide a cache
 }
