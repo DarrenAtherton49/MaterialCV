@@ -8,9 +8,11 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v7.widget.Toolbar;
 
 import com.atherton.darren.R;
+import com.atherton.darren.data.entity.Experience;
 import com.atherton.darren.presentation.injection.component.DaggerMainActivityComponent;
 import com.atherton.darren.presentation.injection.component.MainActivityComponent;
 import com.atherton.darren.presentation.injection.module.MainActivityModule;
+import com.atherton.darren.presentation.navigation.MainNavigation;
 import com.atherton.darren.presentation.view.MainTabbedView;
 import com.atherton.darren.presentation.view.adapter.MainViewPagerAdapter;
 import com.atherton.darren.presentation.view.fragment.BiographyListFragment;
@@ -25,7 +27,7 @@ import butterknife.BindString;
  * Main activity which holds the top level ViewPager/TabLayout.
  * This is the entry point for the app.
  */
-public class MainActivity extends BaseActivity implements MainTabbedView {
+public class MainActivity extends BaseActivity implements MainTabbedView, MainNavigation {
 
     private MainActivityComponent mainActivityComponent;
 
@@ -93,6 +95,12 @@ public class MainActivity extends BaseActivity implements MainTabbedView {
     private void initTabLayout(ViewPager viewPager) {
         if (this.tabLayout != null) {
             this.tabLayout.setupWithViewPager(viewPager);
+        }
+    }
+
+    @Override public void onExperienceItemClicked(final Experience experienceItem) {
+        if (this.appNavigator != null) {
+            this.appNavigator.navigateToExperienceDetail(this, experienceItem.getId());
         }
     }
 }

@@ -24,10 +24,11 @@ public class AppNavigator {
      * Navigates to the biography detail screen.
      *
      * @param context Context needed to open the target activity.
+     * @param biographyId id needed to specify a Biography project.
      */
-    public void navigateToBiographyDetail(Context context) {
+    public void navigateToBiographyDetail(Context context, int biographyId) {
         if (context != null) {
-
+            // todo add intent and start activity
         }
     }
 
@@ -35,10 +36,11 @@ public class AppNavigator {
      * Navigates to the experience detail screen.
      *
      * @param context Context needed to open the target activity.
+     * @param experienceId id needed to specify an Experience object.
      */
-    public void navigateToExperienceDetail(Context context) {
+    public void navigateToExperienceDetail(Context context, int experienceId) {
         if (context != null) {
-
+            // todo add intent and start activity
         }
     }
 
@@ -46,10 +48,11 @@ public class AppNavigator {
      * Navigates to the education detail screen.
      *
      * @param context Context needed to open the target activity.
+     * @param educationId id needed to specify an Education object.
      */
-    public void navigateToEducationDetail(Context context) {
+    public void navigateToEducationDetail(Context context, int educationId) {
         if (context != null) {
-
+            // todo add intent and start activity
         }
     }
 
@@ -57,10 +60,11 @@ public class AppNavigator {
      * Navigates to the profile detail screen.
      *
      * @param context Context needed to open the target activity.
+     * @param projectId id needed to specify a Project object.
      */
-    public void navigateToProjectDetail(Context context) {
+    public void navigateToProjectDetail(Context context, int projectId) {
         if (context != null) {
-
+            // todo add intent and start activity
         }
     }
 }

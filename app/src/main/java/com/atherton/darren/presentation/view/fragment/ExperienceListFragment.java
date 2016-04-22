@@ -107,7 +107,7 @@ public class ExperienceListFragment extends BaseFragment implements ExperienceLi
     }
 
     @Override public void viewExperience(Experience experience) {
-        if (this.experienceListPresenter != null) {
+        if (this.experienceListListener != null) {
             this.experienceListListener.onExperienceItemClicked(experience);
         }
     }
