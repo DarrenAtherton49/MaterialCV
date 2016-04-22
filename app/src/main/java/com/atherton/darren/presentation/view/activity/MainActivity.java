@@ -13,6 +13,7 @@ import com.atherton.darren.presentation.injection.component.DaggerMainActivityCo
 import com.atherton.darren.presentation.injection.component.MainActivityComponent;
 import com.atherton.darren.presentation.injection.module.MainActivityModule;
 import com.atherton.darren.presentation.navigation.MainNavigation;
+import com.atherton.darren.presentation.presenter.MainTabbedPresenter;
 import com.atherton.darren.presentation.view.MainTabbedView;
 import com.atherton.darren.presentation.view.adapter.MainViewPagerAdapter;
 import com.atherton.darren.presentation.view.fragment.BiographyListFragment;
@@ -31,6 +32,7 @@ public class MainActivity extends BaseActivity implements MainTabbedView, MainNa
 
     private MainActivityComponent mainActivityComponent;
 
+    @Inject MainTabbedPresenter mainTabbedPresenter;
     @Inject MainViewPagerAdapter viewPagerAdapter;
 
     @Bind(R.id.collapsingtoolbarlayout_main) CollapsingToolbarLayout collapsingToolbarLayout;
@@ -55,24 +57,53 @@ public class MainActivity extends BaseActivity implements MainTabbedView, MainNa
             initViewPager(this.viewPager);
             initTabLayout(this.viewPager);
         }
+
+        if (savedInstanceState == null) {
+            this.mainTabbedPresenter.init();
+        }
+
+        this.mainTabbedPresenter.setView(this);
+    }
+
+    @Override protected void onResume() {
+        super.onResume();
+        this.mainTabbedPresenter.resume();
+    }
+
+    @Override protected void onPause() {
+        super.onPause();
+        this.mainTabbedPresenter.pause();
+    }
+
+    @Override protected void onDestroy() {
+        super.onDestroy();
+        this.mainTabbedPresenter.destroy();
     }
 
     @Override protected int getContentView() {
         return R.layout.activity_main;
     }
 
-    @Override public OnPageChangeListener onPageChangeListener() {
-        return new OnPageChangeListener() {
-            @Override public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+    private OnPageChangeListener onPageChangeListener = new OnPageChangeListener() {
+        @Override public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-            }
-            @Override public void onPageSelected(int position) {
+        }
+        @Override public void onPageSelected(int position) {
+            pageSelected(position);
+        }
+        @Override public void onPageScrollStateChanged(int state) {
 
-            }
-            @Override public void onPageScrollStateChanged(int state) {
+        }
+    };
 
-            }
-        };
+    @Override public void pageSelected(int position) {
+        if (this.mainTabbedPresenter != null) {
+            this.mainTabbedPresenter.onPageSelected(position);
+        }
+    }
+
+    @Override public void renderHeaderForTab(int position) {
+        //todo change colour, circular reveal animation etc.
     }
 
     private void initInjection() {
@@ -89,7 +120,7 @@ public class MainActivity extends BaseActivity implements MainTabbedView, MainNa
         this.viewPagerAdapter.addFragment(new BiographyListFragment(), projectTitle);
         this.viewPagerAdapter.addFragment(new ExperienceListFragment(), experienceTitle);
         viewPager.setAdapter(this.viewPagerAdapter);
-        viewPager.addOnPageChangeListener(onPageChangeListener());
+        viewPager.addOnPageChangeListener(onPageChangeListener);
     }
 
     private void initTabLayout(ViewPager viewPager) {
