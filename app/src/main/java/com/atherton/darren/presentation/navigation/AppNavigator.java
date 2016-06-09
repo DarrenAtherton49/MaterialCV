@@ -2,6 +2,9 @@ package com.atherton.darren.presentation.navigation;
 
 import android.content.Context;
 
+import com.atherton.darren.presentation.base.BaseActivity;
+import com.atherton.darren.presentation.base.BaseFragment;
+
 import javax.inject.Inject;
 
 /**
@@ -12,8 +15,8 @@ public class AppNavigator {
 
     /**
      * Allows Dagger to return a reference to this field when this class
-     * is needed by a dependent, e.g. {@link com.atherton.darren.presentation.view.activity.BaseActivity}
-     * or {@link com.atherton.darren.presentation.view.fragment.BaseFragment}
+     * is needed by a dependent, e.g. {@link BaseActivity}
+     * or {@link BaseFragment}
      */
     @Inject
     public AppNavigator() {

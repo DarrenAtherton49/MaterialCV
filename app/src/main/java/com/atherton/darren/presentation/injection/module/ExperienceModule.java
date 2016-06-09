@@ -1,10 +1,10 @@
 package com.atherton.darren.presentation.injection.module;
 
-import com.atherton.darren.domain.interactor.GetExperienceList;
+import com.atherton.darren.domain.experience.GetExperienceList;
 import com.atherton.darren.domain.interactor.UseCase;
 import com.atherton.darren.presentation.injection.scope.PerScreen;
-import com.atherton.darren.presentation.presenter.ExperienceListPresenter;
-import com.atherton.darren.presentation.presenter.ExperienceListPresenterImpl;
+import com.atherton.darren.presentation.experience.ExperienceListPresenter;
+import com.atherton.darren.presentation.experience.ExperienceListPresenterImpl;
 
 import javax.inject.Named;
 

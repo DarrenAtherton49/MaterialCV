@@ -3,7 +3,7 @@ package com.atherton.darren.presentation.injection.component;
 import com.atherton.darren.presentation.injection.module.ActivityModule;
 import com.atherton.darren.presentation.injection.module.MainActivityModule;
 import com.atherton.darren.presentation.injection.scope.PerScreen;
-import com.atherton.darren.presentation.view.activity.MainActivity;
+import com.atherton.darren.presentation.main.MainActivity;
 
 import dagger.Component;
 

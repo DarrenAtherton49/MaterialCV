@@ -4,11 +4,11 @@ import android.content.Context;
 
 import com.atherton.darren.domain.executor.PostExecutionThread;
 import com.atherton.darren.domain.executor.ThreadExecutor;
-import com.atherton.darren.domain.repository.ExperienceRepository;
+import com.atherton.darren.domain.experience.ExperienceRepository;
 import com.atherton.darren.presentation.AndroidApplication;
 import com.atherton.darren.presentation.injection.module.AppModule;
-import com.atherton.darren.presentation.view.activity.BaseActivity;
-import com.atherton.darren.presentation.view.fragment.BaseFragment;
+import com.atherton.darren.presentation.base.BaseActivity;
+import com.atherton.darren.presentation.base.BaseFragment;
 
 import javax.inject.Singleton;
 

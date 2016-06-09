@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".presentation.view.activity.MainActivity"
+            android:name=".presentation.main.MainActivity"
             android:label="@string/toolbar_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

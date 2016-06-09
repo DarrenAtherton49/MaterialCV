@@ -5,10 +5,10 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 import com.atherton.darren.data.executor.JobExecutor;
-import com.atherton.darren.data.repository.ExperienceDataRepository;
+import com.atherton.darren.data.experience.ExperienceDataRepository;
 import com.atherton.darren.domain.executor.PostExecutionThread;
 import com.atherton.darren.domain.executor.ThreadExecutor;
-import com.atherton.darren.domain.repository.ExperienceRepository;
+import com.atherton.darren.domain.experience.ExperienceRepository;
 import com.atherton.darren.presentation.AndroidApplication;
 import com.atherton.darren.presentation.UIThread;
 import com.atherton.darren.presentation.navigation.AppNavigator;

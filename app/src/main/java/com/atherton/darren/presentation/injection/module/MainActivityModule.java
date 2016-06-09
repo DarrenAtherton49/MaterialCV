@@ -3,9 +3,9 @@ package com.atherton.darren.presentation.injection.module;
 import android.support.v7.app.AppCompatActivity;
 
 import com.atherton.darren.presentation.injection.scope.PerScreen;
-import com.atherton.darren.presentation.presenter.MainTabbedPresenter;
-import com.atherton.darren.presentation.presenter.MainTabbedPresenterImpl;
-import com.atherton.darren.presentation.view.adapter.MainViewPagerAdapter;
+import com.atherton.darren.presentation.main.MainTabbedPresenter;
+import com.atherton.darren.presentation.main.MainTabbedPresenterImpl;
+import com.atherton.darren.presentation.main.MainViewPagerAdapter;
 
 import dagger.Module;
 import dagger.Provides;
