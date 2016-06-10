@@ -20,7 +20,7 @@ public interface DataLoadingView {
     /**
      * Show a view with a progress bar indicating a loading process.
      */
-    void showProgess();
+    void showProgress();
 
     /**
      * Hide a loading view.

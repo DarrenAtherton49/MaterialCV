@@ -21,6 +21,9 @@ public class ExperienceListPresenterImpl implements ExperienceListPresenter {
 
     private final UseCase getExperienceListUseCase;
 
+    //todo add data mapper
+
+    //todo inject data mapper
     @Inject
     public ExperienceListPresenterImpl(@Named("experienceList") UseCase getExperienceListUseCase) {
         this.getExperienceListUseCase = getExperienceListUseCase;
@@ -62,11 +65,11 @@ public class ExperienceListPresenterImpl implements ExperienceListPresenter {
     }
 
     private void showProgressView() {
-        this.experienceListView.showProgess();
+        this.experienceListView.showProgress();
     }
 
     private void hideProgressView() {
-        this.experienceListView.showProgess();
+        this.experienceListView.hideProgress();
     }
 
     private void showRetryView() {

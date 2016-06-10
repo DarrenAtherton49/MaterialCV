@@ -45,7 +45,7 @@ public class BiographyListFragment extends BaseFragment implements BiographyList
 
     }
 
-    @Override public void showProgess() {
+    @Override public void showProgress() {
 
     }
 

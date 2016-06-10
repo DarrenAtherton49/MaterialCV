@@ -122,7 +122,7 @@ public class ExperienceListFragment extends BaseFragment implements ExperienceLi
 
     }
 
-    @Override public void showProgess() {
+    @Override public void showProgress() {
 
     }
 
