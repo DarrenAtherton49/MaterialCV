@@ -7,8 +7,7 @@
     android:layout_gravity="center"
     android:layout_marginBottom="@dimen/material_keylines"
     android:layout_marginLeft="@dimen/material_keylines"
-    android:layout_marginRight="@dimen/material_keylines"
-    android:foreground="?attr/selectableItemBackground">
+    android:layout_marginRight="@dimen/material_keylines">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -25,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/card_experience_title_height"
             android:layout_alignBottom="@+id/card_image_item_experience"
-            android:layout_marginLeft="@dimen/material_keylines"
+            android:layout_marginStart="@dimen/material_keylines"
             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
         <TextView
@@ -61,8 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textview_date_item_experience"
-            style="?android:attr/borderlessButtonStyle"
-            android:textColor="?attr/colorPrimary"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:text="@string/item_experience_organisation_link_button" />
 
     </RelativeLayout>

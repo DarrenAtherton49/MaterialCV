@@ -12,15 +12,19 @@ import rx.Observable;
 @Singleton
 public class ExperienceDataRepository implements ExperienceRepository {
 
-    //todo implement full constructor
-    @Inject
-    public ExperienceDataRepository() {
+    private final ExperienceDataStoreFactory experienceDataStoreFactory;
 
+    @Inject
+    public ExperienceDataRepository(ExperienceDataStoreFactory experienceDataStoreFactory) {
+        this.experienceDataStoreFactory = experienceDataStoreFactory;
     }
 
-    //todo implement method properly
     @Override public Observable<List<Experience>> experiences() {
-        return Observable.empty();
+        final ExperienceDataStore dataStore = this.experienceDataStoreFactory.createCloudDataStore();
+//        return dataStore.experienceList()
+//                .map(userEntities -> this.userEntityDataMapper.transform(userEntities));
+        //todo transform with mapper
+        return dataStore.experienceList();
     }
 
     //todo implement method properly

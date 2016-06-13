@@ -6,6 +6,7 @@ import android.preference.PreferenceManager;
 
 import com.atherton.darren.data.executor.JobExecutor;
 import com.atherton.darren.data.experience.ExperienceDataRepository;
+import com.atherton.darren.data.networking.RestApi;
 import com.atherton.darren.domain.executor.PostExecutionThread;
 import com.atherton.darren.domain.executor.ThreadExecutor;
 import com.atherton.darren.domain.experience.ExperienceRepository;
@@ -56,6 +57,10 @@ public class AppModule {
 
     @Provides @Singleton ExperienceRepository provideExperienceRepository(ExperienceDataRepository experienceDataRepository) {
         return experienceDataRepository;
+    }
+
+    @Provides @Singleton RestApi provideRestApi() {
+        return RestApi.Factory.create(this.application);
     }
 
     //todo provide a cache

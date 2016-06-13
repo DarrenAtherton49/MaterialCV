@@ -1,4 +1,4 @@
-package com.atherton.darren.presentation.exception;
+package com.atherton.darren.presentation.education;
 
 import com.atherton.darren.data.education.Education;
 import com.atherton.darren.presentation.profile.ProfileListView;

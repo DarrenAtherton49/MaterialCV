@@ -2,6 +2,7 @@ package com.atherton.darren.presentation.injection.component;
 
 import android.content.Context;
 
+import com.atherton.darren.data.networking.RestApi;
 import com.atherton.darren.domain.executor.PostExecutionThread;
 import com.atherton.darren.domain.executor.ThreadExecutor;
 import com.atherton.darren.domain.experience.ExperienceRepository;
@@ -26,5 +27,6 @@ public interface AppComponent {
   AndroidApplication application();
   ThreadExecutor threadExecutor();
   PostExecutionThread postExecutionThread();
+  RestApi restApi();
   ExperienceRepository experienceRepository();
 }
