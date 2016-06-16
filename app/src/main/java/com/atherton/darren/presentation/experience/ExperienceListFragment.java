@@ -35,7 +35,7 @@ public class ExperienceListFragment extends BaseFragment implements ExperienceLi
     @Inject ExperienceListPresenter experienceListPresenter;
     @Inject ExperienceListAdapter experienceListAdapter;
 
-    @Bind(R.id.recyclerview_all) RecyclerView recyclerView;
+    @Bind(R.id.recyclerview_experience) RecyclerView recyclerView;
 
     private ExperienceListListener experienceListListener;
 
@@ -58,7 +58,7 @@ public class ExperienceListFragment extends BaseFragment implements ExperienceLi
 
     @Override public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                        Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_all_list, container, false);
+        final View view = inflater.inflate(R.layout.fragment_experience_list, container, false);
         ButterKnife.bind(this, view);
         initRecyclerView();
         return view;

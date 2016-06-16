@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="material_light_blue">#3498db</color>
-    <color name="material_darker_blue">#2d85c0</color>
-    <color name="material_blue_grey">#e67e22</color>
-    <color name="material_background_grey">#FAFAFA</color>
 
+    <!-- Theme colours -->
+    <color name="primary_dark">#1976D2</color>
+    <color name="primary">#2196f3</color>
+    <color name="primary_light">#BBDEFB</color>
+    <color name="accent">#FF5252</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#727272</color>
+    <color name="divider">#B6B6B6</color>
+
+    <!-- Additional colours -->
     <color name="white">#FFFFFF</color>
     <color name="dark_grey">#424242</color>
     <color name="medium_grey">#9E9E9E</color>
     <color name="button_grey">#757575</color>
+
 </resources>

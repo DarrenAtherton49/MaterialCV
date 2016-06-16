@@ -46,7 +46,7 @@ public class ExperienceListAdapter extends RecyclerView.Adapter<ExperienceViewHo
         viewHolder.dateTextView.setText(experience.getStartDate() + " - " + experience.getEndDate());
         viewHolder.organisationLinkButton.setText(experience.getOrganisation().getUrl()); // todo add click listener to go to url (via interface callback first to fragment)
 
-        // todo Load image into viewHolder.experienceImageView using Glide w/ context
+        // todo Load image into viewHolder.experienceImageView using Glide w/ context (use correct context - look at cheat sheet)
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
