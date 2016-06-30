@@ -18,10 +18,10 @@ public class ExperienceModule {
         return new ExperienceListPresenterImpl(getExperienceListUseCase);
     }
 
-    @Provides @PerScreen @Named("experienceList") UseCase provideGetUserListUseCase(
+    @Provides @PerScreen @Named("experienceList") UseCase provideGetExperienceListUseCase(
             GetExperienceList getExperienceList) {
         return getExperienceList;
     }
 
-    //todo add provideGetUserDetailUseCase here too
+    //todo add provideGetExperienceDetailUseCase here too
 }
